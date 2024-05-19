@@ -1,4 +1,4 @@
-export const checkWinner = (tablero) => {
+export const checkWinner = (tablero: string | string[]) => {
     for(let i = 0; i < tablero.length; i++){
       for(let j = 0; j < tablero[i].length; j++){
         if(tablero[i][j] === null) continue;
