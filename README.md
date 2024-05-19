@@ -11,7 +11,6 @@ Xoga2 es un proyecto de software que ofrece un espacio interactivo para jugar co
 
 Todo el sistema esta hecho con React y Typescrpit juntando viejos proyectos que tenia sueltos.  
 
-## Quieres contribuir?
 ## ¿Quieres contribuir?
 
 ¡Nos encantaría que contribuyeras al proyecto Xoga2! Aquí hay algunas formas en las que puedes ayudar:
