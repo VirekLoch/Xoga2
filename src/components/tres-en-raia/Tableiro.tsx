@@ -1,9 +1,9 @@
-import { SQUARE } from "./Cuadrado.jsx";
+import { SQUARE, SQUARE2 } from "./Cuadrado.js";
 import { useState } from "react";
 import { WINER_COMBINATIONS, TURNS } from "../Consts.js";
 import './tres-en-raia.css';
 
-export function Board ({xogadores}){
+export function Board ({xogadores}: {xogadores: string[]}){
     const [board, setBoard] = useState(() => {
         const savedBoard = window.localStorage.getItem('board');
         return savedBoard ? JSON.parse(savedBoard) : Array(9).fill(null);
@@ -12,10 +12,10 @@ export function Board ({xogadores}){
         const savedTurn = window.localStorage.getItem('turn');
         return savedTurn ? JSON.parse(savedTurn) : TURNS.X;
     });
-    const [winner, setWinner] = useState(null);
+    const [winner, setWinner] = useState<string|null|boolean>(null);
     const [nomJugador, setNomJugador] = useState(xogadores[0]);
 
-    const checkWinner = (board) => {
+    const checkWinner = (board: unknown[]) => {
         for(const combination of WINER_COMBINATIONS){
         const [a, b, c] = combination;
         if(board[a] && board[a] === board[b] && board[a] === board[c]){
@@ -25,10 +25,10 @@ export function Board ({xogadores}){
         return null;
     }
 
-    const updateBoard = (index) => {
+    const updateBoard = (index: string | number) => {
         if(board[index] !== null || winner) return;
         const newBoard = [...board];
-        newBoard[index] = turn;
+        newBoard[index as number] = turn;
         setBoard(newBoard);
 
         const newWiner = checkWinner(newBoard);
@@ -37,7 +37,7 @@ export function Board ({xogadores}){
             if(nomJugador)
                 setWinner(nomJugador);
             else
-                setWinner(newWiner);
+                setWinner(newWiner.toString());
         return;
         }
         
@@ -70,21 +70,21 @@ export function Board ({xogadores}){
         <h1>Tres en Raia</h1>
         <section className='board'>
             {
-            board.map((_, index) => (
-                <SQUARE key={index} index={index} updateBoard={updateBoard}>
-                {board[index]}
-                </SQUARE>
-            ))
+                board.map((_: unknown, index: number) => (
+                    <SQUARE key={index} index={index} updateBoard={updateBoard}>
+                        {board[index]}
+                    </SQUARE>
+                ))
             }
         </section>
 
         <section className='turn'>
-            <SQUARE isSelected={turn === TURNS.X}>
+            <SQUARE2 isSelected={turn === TURNS.X}>
             {TURNS.X}
-            </SQUARE>
-            <SQUARE isSelected={turn === TURNS.O}>
+            </SQUARE2>
+            <SQUARE2 isSelected={turn === TURNS.O}>
             {TURNS.O}
-            </SQUARE>
+            </SQUARE2>
         </section>
         <button className='boton-reset' onClick={resetGame}>Recomezar</button>
 

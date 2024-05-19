@@ -1,5 +1,5 @@
-import { Board } from "../tres-en-raia/Tableiro.jsx";
-import { Taboeiro } from "../Conecta-catro/Taboeiro.jsx";
+import { Board } from "../tres-en-raia/Tableiro.tsx";
+import { Taboeiro } from "../Conecta-catro/Taboeiro.tsx";
 
 type ControllerXogosProps = {
     xogo: string | null;

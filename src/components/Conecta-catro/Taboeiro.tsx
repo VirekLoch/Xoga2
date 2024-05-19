@@ -1,9 +1,9 @@
-import { TABLERO, JUGADORES, MOVES } from '../Consts'
-import { useState } from 'react'
-import { checkWinner } from './utils.js'
+import { TABLERO, JUGADORES, MOVES } from '../Consts.ts'
+import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useState } from 'react'
+import { checkWinner } from './utils.ts'
 import './Taboeiro.css';
 
-export function Taboeiro ({xogadores}){
+export function Taboeiro ({xogadores}: {xogadores: string[]}){
     if(xogadores.length === 0){
       xogadores.push("Xogador 1")
       xogadores.push("Xogador 2")
@@ -11,14 +11,14 @@ export function Taboeiro ({xogadores}){
 
     const [tablero, setTablero] = useState(TABLERO);
     const [jugador, setJugador] = useState(JUGADORES[1]);
-    const [ganador, setGanador] = useState(null);
+    const [ganador, setGanador] = useState<string|null>(null);
     const [nomJugador, setNomJugador] = useState(xogadores[0]);
 
-    const jugada = (index) => () => {
+    const jugada = (index: number) => () => {
       if(ganador) return;
-      var newTablero = [...tablero];
+      const newTablero = [...tablero];
   
-      var fila = [...tablero[index]];
+      let fila = [...tablero[index]];
       if(!fila.includes(null))
         return;
     
@@ -77,7 +77,7 @@ export function Taboeiro ({xogadores}){
         <div className="tablero">
           {tablero.map((fila, i) => (
             <div key={i} className="columna">
-              {fila.map((casilla, j) => (
+              {fila.map((casilla: string | number | boolean | ReactElement<unknown, string | JSXElementConstructor<unknown>> | Iterable<ReactNode> | ReactPortal | null | undefined, j: Key | null | undefined) => (
                 <div key={j} className="casilla">
                   {casilla}
                 </div>

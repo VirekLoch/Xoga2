@@ -13,7 +13,7 @@ export default function Home() {
 
     const createPlayers = (event:React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        const xogadores = event.target
+        const xogadores = event.target as HTMLFormElement
         if(xogadores.xogador1.value === '' || xogadores.xogador2.value === '') return 
         if(xogadores.xogador1.value === xogadores.xogador2.value) return 
         setXogadores([xogadores?.xogador1.value, xogadores?.xogador2.value])
