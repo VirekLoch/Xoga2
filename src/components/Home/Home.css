@@ -106,7 +106,7 @@ ul{
     margin-bottom: 10px;
 }
 .div-blur{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
