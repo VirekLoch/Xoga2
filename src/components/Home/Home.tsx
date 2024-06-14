@@ -32,11 +32,11 @@ export default function Home() {
                     <button onClick={handleFlag}> Quen xoga? </button>
 
                 ) :(
-                    <>
+                    <div className='xogadores'>
                         <p>{xogadores[0]}</p>
                         <p>VS</p>
                         <p>{xogadores[1]}</p>
-                    </>
+                    </div>
                     
                 )   
             }
