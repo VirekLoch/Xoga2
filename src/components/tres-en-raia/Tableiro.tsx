@@ -68,7 +68,7 @@ export function Board ({xogadores}: {xogadores: string[]}){
         <>
         <main className='game'>
         <h1>Tres en Raia</h1>
-        <section className='board'>
+        <section className='boardTresEnRaia'>
             {
                 board.map((_: unknown, index: number) => (
                     <SQUARE key={index} index={index} updateBoard={updateBoard}>
