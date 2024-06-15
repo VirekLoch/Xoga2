@@ -5,11 +5,9 @@ import xogos from './xogos-disponhibles.json'
 import { useState } from 'react'
 
 export default function Home() {
-    const [xogoActual, setXogo] = useState<string | null>(null)
+    const [xogoActual, setXogo] = useState<string | null>( xogos.xogos.find((xogo) => xogo.ref === window.location.pathname)?.nome || null)
     const [xogadores, setXogadores] = useState<string[]>([])
     const [flag, setFlag] = useState<boolean>(false)
-    console.log(xogadores)
-
 
     const createPlayers = (event:React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()

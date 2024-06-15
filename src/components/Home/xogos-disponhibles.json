@@ -4,19 +4,19 @@
             "nome":"Tres en raia",
             "descricion":"Xogo de tres en raia",
             "imaxe":"./imgs/tres-en-raia.webp",
-            "ref":"./tres-en-raia"
+            "ref":"/tres-en-raia"
         },
         {
             "nome":"Conecta 4",
             "descricion":"Xogo de conectar 4",
             "imaxe":"./imgs/conecta-catro.webp",
-            "ref":"./conecta-catro"
+            "ref":"/conecta-catro"
         },
         {
             "nome":"Parexas",
             "descricion":"Xogo de parexas",
             "imaxe":"./imgs/parexas.webp",
-            "ref":"./parexas"
+            "ref":"/parexas"
         }
     ]
 }
