@@ -103,8 +103,8 @@ export default function Parexas({xogadores}: {xogadores: string[]}) {
             <button onClick={() => {resetGame()}} className='restart'> Reiniciar </button>
             <div className='await-cards'></div>
             {ganador === null ? <></> : 
-                <div className='winner'>
-                    <div className='winner-overlay'>
+                <div className='victoria'>
+                    <div className='victoria-overlay'>
                     <h2>{ganador} gañou!</h2>
                     <button onClick={() => {resetGame()}}> Xogar de novo </button>
                     </div>
