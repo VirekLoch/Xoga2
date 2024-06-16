@@ -17,6 +17,12 @@
             "descricion":"Xogo de parexas",
             "imaxe":"./imgs/parexas.webp",
             "ref":"/parexas"
+        },
+        {
+            "nome":"Bingo",
+            "descricion":"Bingo",
+            "imaxe":"./imgs/bingo.webp",
+            "ref":"/bingo"
         }
     ]
 }

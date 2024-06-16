@@ -1,6 +1,7 @@
 import { Board } from "../tres-en-raia/Tableiro.tsx";
 import { Taboeiro } from "../Conecta-catro/Taboeiro.tsx";
 import  Parexas from "../Parexas/Parexas.tsx";
+import { Bingo } from "../Bingo/Bingo.tsx";
 
 type ControllerXogosProps = {
     xogo: string | null;
@@ -19,6 +20,7 @@ export function ControllerXogos({xogo, setXogo , xogadores}: ControllerXogosProp
     const tresEnRaiaComponent = <Board xogadores={xogadores}/> ;
     const conectaCatroComponent = <Taboeiro xogadores={xogadores}/>;
     const parexasComponent = <Parexas xogadores={xogadores}/>;
+    const bingoComponent = <Bingo xogadores={xogadores}/>;
 
     let toRet = null;
 
@@ -35,6 +37,11 @@ export function ControllerXogos({xogo, setXogo , xogadores}: ControllerXogosProp
             toRet = parexasComponent;
             navigateTo('/parexas')
             break;
+        case "Bingo":
+            toRet = bingoComponent;
+            navigateTo('/bingo')
+            break;
+
     }
 
     return (
