@@ -16,6 +16,12 @@
     height: 50px;
     user-select: none;
 }
+@media (prefers-color-scheme: light) {
+    .numero{
+        color: #000;
+        border: #000 1px solid;
+    }
+}
 .numero.selected{
     background-color: #f1c40f;
     color: black;
@@ -26,6 +32,10 @@
 }
 .numero.selected.error{
     background-color: #e74c3c;
+    color: black;
+}
+.numero.selected.empty{
+    background-color: white;
     color: black;
 }
 .numero.empty{

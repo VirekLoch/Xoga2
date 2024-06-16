@@ -90,3 +90,9 @@ h3{
         margin-top: -15%;
     }
 }
+@media (prefers-color-scheme: light) {
+    .card{
+        color: #000;
+        border: #000 1px solid;
+    }
+}
