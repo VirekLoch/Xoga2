@@ -1,9 +1,5 @@
 {
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "./src/main.tsx"
-      }
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/index.html" }
     ]
   }
-  
