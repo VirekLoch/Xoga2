@@ -40,7 +40,7 @@ export function Bingo({xogadores}: {xogadores: string[]}){
 
     const [cardP1, setCardP1] = useState<number[]>(generateCard());
     const [cardP2, setCardP2] = useState<number[]>(generateCard());
-    const [numbers, setNumbers] = useState<number[]>([]);
+    const [numbers, setNumbers] = useState<Array<number>>([]);
     const [winner, setWinner] = useState<string | null>(null);
     let  pullNumber =Array(99).fill(0).map((_, index) => index + 1).sort(() => Math.random() - 0.5);
 
@@ -121,7 +121,7 @@ export function Bingo({xogadores}: {xogadores: string[]}){
                 </div>
                 <div className='pulledNumbers'>
                     {
-                        numbers.toReversed().slice(0,9).map((number, index) => (
+                        numbers.slice(-9).map((number, index) => (
                             <div key={index} className='numero'>{number}</div>
                         ))
                     }
